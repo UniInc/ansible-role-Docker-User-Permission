@@ -1,0 +1,6 @@
+- hosts: node #localhost
+  vars:
+    reboot: true
+  roles:
+  - geerlingguy.docker
+  - ansible-role-Docker-User-Permission

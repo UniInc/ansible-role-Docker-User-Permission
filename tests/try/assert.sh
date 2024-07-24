@@ -1,3 +1,4 @@
+docker ps
 docker run hello-world
 
 sudod(){
