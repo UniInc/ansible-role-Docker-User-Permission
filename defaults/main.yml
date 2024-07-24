@@ -1,0 +1,5 @@
+---
+user: "{{ ansible_env.USER }}"
+
+# Optional
+reboot: false

@@ -1,0 +1,21 @@
+---
+# from: https://docs.docker.com/engine/install/linux-postinstall/
+# `sudo usermod -aG docker $USER`
+
+- name: Create the docker group.
+  group:
+    name: docker
+    state: present
+  become: true
+
+- name: Add your user to the docker group.
+  user:
+    name: "{{ user }}"
+    groups: docker
+    append: yes
+  become: true
+  # notify: Reboot
+  # Reconnecting to ssh should be enough to work Without rebooting!
+
+- debug:
+    msg: "Add {{ user }} to Docker"
