@@ -17,5 +17,8 @@
   notify: Reboot
   # Reboot is optional, see `vars: reboot`. Reconnecting to ssh should be enough to work!
 
-- debug:
-    msg: "Add {{ user }} to Docker"
+- name: Reset ssh connection to allow user changes to affect 'current login user'
+  ansible.builtin.meta: reset_connection
+
+#- debug:
+#    msg: "Add {{ user }} to Docker"
